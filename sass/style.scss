@@ -1,0 +1,39 @@
+body {
+  margin: 0 auto;
+}
+
+.header {
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  margin: 0 auto;
+  width: 800px;
+}
+
+#carousel {
+  left:-40px;
+  position: absolute;
+  top: 30%;
+}
+
+.imageList {
+  height: 320px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  width: 2000px;
+  li {
+    display: inline-block;
+    float: none;
+    height: auto;
+    list-style: none;
+    text-align: center;
+    vertical-align: middle;
+  }
+  img {
+    height: 320px;
+    padding: 0 1px;
+    width: 400px;
+  }
+}

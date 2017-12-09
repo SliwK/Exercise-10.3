@@ -1,0 +1,34 @@
+body {
+  margin: 0 auto; }
+
+.header {
+  margin: 0 auto;
+  width: 800px; }
+  .header h1 {
+    text-align: center;
+    text-transform: uppercase; }
+
+#carousel {
+  left: -40px;
+  position: absolute;
+  top: 30%; }
+
+.imageList {
+  height: 320px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  width: 2000px; }
+  .imageList li {
+    display: inline-block;
+    float: none;
+    height: auto;
+    list-style: none;
+    text-align: center;
+    vertical-align: middle; }
+  .imageList img {
+    height: 320px;
+    padding: 0 1px;
+    width: 400px; }
+
+/*# sourceMappingURL=style.css.map */
