@@ -2,32 +2,71 @@
 <html lang="pl">
 <head>
     <meta charset="utf-8">
-    <title>Example</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Exercise 10.3 - carousel with jQuery</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
+<!--    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+!-->
 </head>
 <body>
     <div class="header">
         <h1>Carousel - exercise 10.3 (jQuery)</h1>
     </div>
     <div id="carousel">
-        <ul class="imageList">
-            <li>
+        <ul class="image-list" id="imgList">
+            <li class="1">
               <img src="https://images.unsplash.com/photo-1445620466293-d6316372ab59?auto=format&fit=crop&w=967&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="pic1">
             </li>
-            <li>
+            <li class="2">
               <img src="https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="pic2">
             </li>
-            <li>
+            <li class="3">
               <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1002&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="pic3">
             </li>
-            <li>
+            <li class="4">
               <img src="https://images.unsplash.com/photo-1508921234172-b68ed335b3e6?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="pic4">
             </li>
-            <li>
+            <li class="5">
               <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=967&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="pic5">
+            </li>
+            <li class="6">
+              <img src="https://images.unsplash.com/photo-1463620695885-8a91d87c53d0?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="pic6">
+            </li>
+            <li class="7">
+              <img src="https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?auto=format&fit=crop&w=800&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="pic7">
+            </li>
+        </ul>
+    </div>
+    <div class="navig">
+        <ul class="navig-elements">
+            <li class="previous" id="backward">
+              <i class="fa fa-backward" aria-hidden="true"></i>
+            </li>
+            <li class="circle-pagination">
+              <i class="fa fa-circle-o" aria-hidden="true"></i>
+            </li>
+            <li class="circle-pagination">
+              <i class="fa fa-circle-o" aria-hidden="true"></i>
+            </li>
+            <li class="circle-pagination">
+              <i class="fa fa-circle-o" aria-hidden="true"></i>
+            </li>
+            <li class="circle-pagination">
+              <i class="fa fa-circle-o" aria-hidden="true"></i>
+            </li>
+            <li class="circle-pagination">
+              <i class="fa fa-circle-o" aria-hidden="true"></i>
+            </li>
+            <li class="circle-pagination">
+              <i class="fa fa-circle-o" aria-hidden="true"></i>
+            </li>
+            <li class="circle-pagination">
+              <i class="fa fa-circle-o" aria-hidden="true"></i>
+            </li>
+            <li class="next" id="forward">
+              <i class="fa fa-forward" aria-hidden="true"></i>
             </li>
         </ul>
     </div>

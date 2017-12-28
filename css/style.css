@@ -1,10 +1,12 @@
 body {
+  background-color: grey;
   margin: 0 auto; }
 
 .header {
   margin: 0 auto;
   width: 800px; }
   .header h1 {
+    color: white;
     text-align: center;
     text-transform: uppercase; }
 
@@ -13,22 +15,42 @@ body {
   position: absolute;
   top: 30%; }
 
-.imageList {
+.image-list {
   height: 320px;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
   width: 2000px; }
-  .imageList li {
+  .image-list li {
     display: inline-block;
     float: none;
     height: auto;
     list-style: none;
     text-align: center;
     vertical-align: middle; }
-  .imageList img {
+  .image-list img {
     height: 320px;
     padding: 0 1px;
     width: 400px; }
+
+.navig {
+  position: relative;
+  top: 500px;
+  width: 800px;
+  margin: 0 auto; }
+
+.navig-elements {
+  color: white;
+  display: flex; }
+  .navig-elements li {
+    flex: 1;
+    display: inline-block;
+    list-style: none;
+    border-radius: 50px;
+    height: 20px;
+    width: 20px;
+    border-color: black; }
+    .navig-elements li:hover {
+      color: red; }
 
 /*# sourceMappingURL=style.css.map */
