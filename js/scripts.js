@@ -1,67 +1,77 @@
 // scripts.js
 $(function(){
 	var carouselList = $("#carousel ul");
-  function changeSlide() {
+
+	function changeSlide() {
   carouselList.animate({'marginLeft':-400}, 500, moveFirstSlide);
   }
-  var interval = setInterval(changeSlide, 4500);
+
+  var interval = setInterval(changeSlide, 3000);
 
   function moveFirstSlide(){
     var firstItem = carouselList.find("li:first");
     var lastItem = carouselList.find("li:last");
-
 		lastItem.after(firstItem);
     carouselList.css({marginLeft:0});
-
+		$(firstItem).removeClass("active");
+		setActiveElement();
   }
 
-	function activateSlide() {
-		var firstItem = $("#imgList").find("li:first");
-		$(firstItem).css("border-radius", "20px").addClass("active");
+	function setActiveElement(){
+		var newFirstItem = carouselList.find("li:first").addClass("active");
+		var indexOfActive = newFirstItem.attr("id");
+		console.log(indexOfActive);
+		var newIndexCircle = 'Circle-'+indexOfActive;
+		console.log(newIndexCircle);
+		$('.navig-elements').find("#newIndexCircle").addClass("active");
 	}
 
-	function deactivateSlide() {
-		var lastItem = $("#imgList").find("li:last");
-		$(lastItem).css("none").removeClass("active");
-	}
 
 
 //DODATKOWE ĆWICZENIE - uzyskanie podobnego wyniku jak tutaj http://sachinchoolur.github.io/lightslider/
 
-/* to zasąpione przez :hover
-	var navigElements = $(".navig-elements").find("li");
-	$(navigElements).mouseover(function(){
-		$(this).css('color', 'red');
+//przywrócenie animacji
+	carouselList.dblclick(function(){
+		interval = setInterval(changeSlide, 3000);
 	});
-	$(navigElements).mouseout(function(){
-		$(this).css('color', 'white');
+
+// próba zatrzymywania aminacji po najechaniu na przycisk :(
+	var hhhh = $("#controlers");
+	hhhh.hover(function(){
+		console.log("tu się powinno zatrzymać");
+	}, function(){
+		console.log("a tutaj uruchomić");
 	});
-*/
 
 
-/* próba zatrzymywania aminacji po najechaniu na przycisk :(
 
-var backward = $(".navig-elements").find("#backward");
-$(backward).mouseover(function stopCarousel(){
-	clearInterval(interval);
-});
-$(backward).mouseout(setInterval(changeSlide, 4500));
+//przesunięcie zdjęć w prawo
+	function changeLastSlide() {
+	carouselList.animate({'marginRight':-400}, 500, moveLastSlide);
+	}
 
-*/
-
-	var backward = $("#backward");
-	backward.click(function moveBackward() {
-	carouselList.animate({'marginLeft': -400}, 500);
-});
-
-
-	var forward = $("#forward");
-	forward.click(function moveForward() {
-		carouselList.animate({'marginLeft': 400}, 500);
+	function moveLastSlide(){
 		var firstItem = carouselList.find("li:first");
-    var lastItem = carouselList.find("li:last");
-    lastItem.before(firstItem);
-    carouselList.css({marginLeft:0});
+		var lastItem = carouselList.find("li:last");
+		firstItem.before(lastItem);
+		carouselList.css({marginLeft:0});
+		$(firstItem).removeClass("active");
+		setActiveElement();
+	}
+
+
+	var forward = $('#forward').click(function(){
+		clearInterval(interval);
+		moveLastSlide();
+		console.log("powinno pójść do tyłu");
 	});
+
+//Przesunięcie zdjęć w lewo
+	var backward = $('#backward').click(function(){
+		clearInterval(interval);
+		moveFirstSlide();
+		console.log('powinno pójść do przodu');
+	});
+
 
 });

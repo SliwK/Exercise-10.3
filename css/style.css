@@ -30,8 +30,11 @@ body {
     vertical-align: middle; }
   .image-list img {
     height: 320px;
+    opacity: 0.5;
     padding: 0 1px;
     width: 400px; }
+  .image-list .active img {
+    opacity: 1; }
 
 .navig {
   position: relative;
@@ -43,14 +46,15 @@ body {
   color: white;
   display: flex; }
   .navig-elements li {
-    flex: 1;
-    display: inline-block;
-    list-style: none;
     border-radius: 50px;
+    display: inline-block;
+    flex: 1;
+    list-style: none;
     height: 20px;
-    width: 20px;
-    border-color: black; }
+    width: 20px; }
     .navig-elements li:hover {
       color: red; }
+  .navig-elements .active i {
+    color: red; }
 
 /*# sourceMappingURL=style.css.map */
