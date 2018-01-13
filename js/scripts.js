@@ -17,18 +17,22 @@ $(function(){
 		setActiveElement();
   }
 
+//DODATKOWE ĆWICZENIE - uzyskanie podobnego wyniku jak tutaj http://sachinchoolur.github.io/lightslider/
+
 	function setActiveElement(){
 		var newFirstItem = carouselList.find("li:first").addClass("active");
 		var indexOfActive = newFirstItem.attr("id");
 		console.log(indexOfActive);
-		var newIndexCircle = 'Circle-'+indexOfActive;
+		var newIndexCircle = '#Circle-'+indexOfActive;
 		console.log(newIndexCircle);
-		$('.navig-elements').find("#newIndexCircle").addClass("active");
+		$(".navig-elements").find(".active").removeClass("active");
+		$('.navig-elements').find(newIndexCircle).addClass("active");
+
 	}
 
 
 
-//DODATKOWE ĆWICZENIE - uzyskanie podobnego wyniku jak tutaj http://sachinchoolur.github.io/lightslider/
+
 
 //przywrócenie animacji
 	carouselList.dblclick(function(){
