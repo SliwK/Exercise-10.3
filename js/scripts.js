@@ -22,9 +22,9 @@ $(function(){
 	function setActiveElement(){
 		var newFirstItem = carouselList.find("li:first").addClass("active");
 		var indexOfActive = newFirstItem.attr("id");
-		console.log(indexOfActive);
+
 		var newIndexCircle = '#Circle-'+indexOfActive;
-		console.log(newIndexCircle);
+
 		$(".navig-elements").find(".active").removeClass("active");
 		$('.navig-elements').find(newIndexCircle).addClass("active");
 
@@ -38,15 +38,6 @@ $(function(){
 	carouselList.dblclick(function(){
 		interval = setInterval(changeSlide, 3000);
 	});
-
-// próba zatrzymywania aminacji po najechaniu na przycisk :(
-	var hhhh = $("#controlers");
-	hhhh.hover(function(){
-		console.log("tu się powinno zatrzymać");
-	}, function(){
-		console.log("a tutaj uruchomić");
-	});
-
 
 
 //przesunięcie zdjęć w prawo
