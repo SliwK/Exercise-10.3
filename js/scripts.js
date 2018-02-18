@@ -31,9 +31,6 @@ $(function(){
 	}
 
 
-
-
-
 //przywrócenie animacji
 	carouselList.dblclick(function(){
 		interval = setInterval(changeSlide, 3000);
@@ -57,16 +54,41 @@ $(function(){
 
 	var forward = $('#forward').click(function(){
 		clearInterval(interval);
-		moveLastSlide();
-		console.log("powinno pójść do tyłu");
+		moveFirstSlide();
+//		console.log("powinno pójść do tyłu");
 	});
 
 //Przesunięcie zdjęć w lewo
 	var backward = $('#backward').click(function(){
 		clearInterval(interval);
-		moveFirstSlide();
-		console.log('powinno pójść do przodu');
+		moveLastSlide();
+//		console.log('powinno pójść do przodu');
 	});
 
+
+	var dot = $("li[id^='Circle-']").click(function(){
+//			console.log("click");
+			clearInterval(interval);
+			var dotIndex = $(this).index();
+//			console.log(dotIndex);
+			useDots(dotIndex);
+	});
+
+	function useDots(dotIndex) {
+			var firstItemId = carouselList.find("li:first").attr("id");
+
+			if(dotIndex > firstItemId){
+				var movesLeft = dotIndex - firstItemId;
+//				console.log("ilosć przesunięć w lewo: "+movesLeft);
+				for (var i = 0; i < movesLeft; i++) {
+					moveFirstSlide();
+			} } else {
+					var movesRight = firstItemId - dotIndex;
+//					console.log("ilosć przesunięć w prawo: "+movesRight);
+					for (var j = 0; j < movesRight; j++) {
+						moveLastSlide();
+					}
+				}
+			}
 
 });
